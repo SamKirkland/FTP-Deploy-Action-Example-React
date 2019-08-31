@@ -10,7 +10,7 @@ jobs:
     - name: Compile javascript
       run: npm run build
     - name: Output files
-      run: echo ls
+      run: ls
     - name : FTP-Deploy
       uses: SamKirkland/FTP-Deploy-Action@master
       env: 
