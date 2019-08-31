@@ -1,0 +1,20 @@
+on: push
+name: Build and Publish Website
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Project setup
+      run: npm install
+    - name: Compile javascript
+      run: npm run build
+    - name: Output files
+      run: echo ls
+    - name : FTP-Deploy
+      uses: SamKirkland/FTP-Deploy-Action@master
+      env: 
+       FTP_SERVER :  ${{ secrets.FTP_SERVER }}
+       FTP_PASSWORD :  ${{ secrets.FTP_PASSWORD }}
+       FTP_USERNAME :  ${{ secrets.FTP_USERNAME }}
+       LOCAL_DIR : ${{ secrets.LOCAL_DIR }}
