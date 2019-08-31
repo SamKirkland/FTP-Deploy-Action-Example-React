@@ -9,11 +9,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-    - run: npm install
-    - run: npm build
+    - name: Build Project
+      uses: actions/setup-node@v1
+      run: npm install
+      run: npm build
     - name: List output files
       run: ls
     - name: FTP-Deploy
