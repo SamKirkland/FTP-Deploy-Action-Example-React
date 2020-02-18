@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          This page was deployed via Git <a href="https://github.com/SamKirkland/FTP-Deploy-Action">FTP-Deploy-Action</a>
+          This page was deployed automatically. Find out more <a href="https://github.com/SamKirkland/FTP-Deploy-Action">FTP-Deploy-Action</a>
         </p>
         <a
           className="App-link"
