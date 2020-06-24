@@ -1,5 +1,5 @@
 # FTP-Deploy-Action-Example-React
-An example of deploying a react project using FTP-Deploy-Action.
+An example of deploying a react project using [FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action).
 The following example should work for most frameworks (angular, react, vue, etc)
 
 You can see the results of this deployment by going to [ftp-deploy-action-example-react.samkirkland.com](https://ftp-deploy-action-example-react.samkirkland.com/)
