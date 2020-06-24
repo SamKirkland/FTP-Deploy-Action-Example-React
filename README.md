@@ -2,6 +2,10 @@
 An example of deploying a react project using FTP-Deploy-Action.
 The following example should work for most frameworks (angular, react, vue, etc)
 
+You can see the results of this deployment by going to [ftp-deploy-action-example-react.samkirkland.com](https://ftp-deploy-action-example-react.samkirkland.com/)
+
+![Build and Publish Front End Framework Website](https://github.com/SamKirkland/FTP-Deploy-Action-Example-React/workflows/Build%20and%20Publish%20Front%20End%20Framework%20Website/badge.svg)
+
 ### Secrets
 To add a `secret` go to the `Settings` tab in your project then select `Secrets`. Add a new `Secret` for each of the following
 
@@ -47,7 +51,7 @@ jobs:
        FTP_SERVER :  ${{ secrets.FTP_SERVER }}
        FTP_PASSWORD :  ${{ secrets.FTP_PASSWORD }}
        FTP_USERNAME :  ${{ secrets.FTP_USERNAME }}
-       LOCAL_DIR : ${{ secrets.LOCAL_DIR }}
+       LOCAL_DIR : ${{ secrets.LOCAL_DIR }} # If you want to publish the contents of the folder, but not the folder itself you can add a trailing slash (example: build/)
 
 ```
 
