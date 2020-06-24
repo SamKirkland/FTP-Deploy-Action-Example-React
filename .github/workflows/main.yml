@@ -28,4 +28,4 @@ jobs:
         ftp-server: ftp://ftp.samkirkland.com/
         ftp-username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: build/
+        local-dir: build
