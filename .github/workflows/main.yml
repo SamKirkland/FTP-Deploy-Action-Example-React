@@ -23,7 +23,7 @@ jobs:
       run: find build/ -print
       
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ftp://ftp.samkirkland.com/
         ftp-username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
