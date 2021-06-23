@@ -27,4 +27,4 @@ jobs:
         server: ftp.samkirkland.com
         username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: build
+        local-dir: build/
