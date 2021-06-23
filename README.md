@@ -11,9 +11,9 @@ To add a `secret` go to the `Settings` tab in your project then select `Secrets`
 
 | Secret Key Name | Value                                                                |
 |-----------------|----------------------------------------------------------------------|
-| ftp-username    | react-deploy-example@ftp-deploy-action-example-react.samkirkland.com |
-| ftp-password    | YourPasswordHere                                                     |
-| ftp-server      | ftp.samkirkland.com:21                                               |
+| server          | ftp.samkirkland.com                                                  |
+| username        | react-deploy-example@ftp-deploy-action-example-react.samkirkland.com |
+| password        | YourPasswordHere                                                     |
 | local-dir       | build                                                                |
 
 
@@ -21,34 +21,33 @@ To add a `secret` go to the `Settings` tab in your project then select `Secrets`
 The following is the exact contents of `FTP-Deploy-Action-Example-React/.github/workflows/main.yml` file
 ```
 on: push
-name: Build and Publish Front End Framework Website
+name: 🚀 Deploy website on push
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
+    - name: Use Node.js 12
+      uses: actions/setup-node@v2-beta
       with:
-        node-version: '12.x'
-        
-    - name: Build Project
+        node-version: '12'
+      
+    - name: 🔨 Build Project
       run: |
         npm install
-        npm run build --if-present
-        
+        npm run build
+    
     - name: List output files
       run: find build/ -print
       
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        ftp-server: ftp://ftp.samkirkland.com/
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: build
+        server: ftp.samkirkland.com
+        username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: build/
 ```
