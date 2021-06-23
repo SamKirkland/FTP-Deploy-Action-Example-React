@@ -14,7 +14,7 @@ To add a `secret` go to the `Settings` tab in your project then select `Secrets`
 | server          | ftp.samkirkland.com                                                  |
 | username        | react-deploy-example@ftp-deploy-action-example-react.samkirkland.com |
 | password        | YourPasswordHere                                                     |
-| local-dir       | build                                                                |
+| local-dir       | build/                                                               |
 
 
 ### YAML config file
