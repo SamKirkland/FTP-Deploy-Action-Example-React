@@ -6,9 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-    - name: 🔨 Build Project
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
@@ -17,10 +16,10 @@ jobs:
     - run: npm run build
     
     - name: List output files
-      run: find build/ -print
+    - run: find build/ -print
       
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+    - uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ftp.samkirkland.com
         username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
