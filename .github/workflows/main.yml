@@ -8,10 +8,11 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    - name: Use Node.js 12
-      uses: actions/setup-node@v2-beta
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
       with:
-        node-version: '12'
+        node-version: '14'
+        cache: 'npm'
       
     - name: 🔨 Build Project
       run: |
@@ -22,7 +23,7 @@ jobs:
       run: find build/ -print
       
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ftp.samkirkland.com
         username: react-deploy-example@ftp-deploy-action-example-react.samkirkland.com
